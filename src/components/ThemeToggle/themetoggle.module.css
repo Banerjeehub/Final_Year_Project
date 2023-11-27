@@ -1,6 +1,5 @@
 .container {
   display: flex;
-
   border-radius: 50px;
   width: 40px;
   height: 20px;
@@ -9,12 +8,29 @@
   padding: 1px;
   position: relative;
   cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+[data-theme="light"] .container {
+  background-color: #f6eee3;
+}
+
+[data-theme="dark"] .container {
+  background-color: #0f172a;
 }
 
 .ball {
   border-radius: 50%;
-  height: 14px;
-  width: 14px;
+  height: 16px;
+  width: 16px;
   margin: 2px;
   position: absolute;
+  transition: transform 1s ease;
+  background: #0f172a;
+  transform: translateX(0);
+}
+
+[data-theme="dark"] .ball {
+  transform: translateX(calc(100% - 16px));
+  background: #f6eee3;
 }

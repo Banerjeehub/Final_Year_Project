@@ -10,6 +10,7 @@ const ThemeToggle = () => {
     <div
       className={styles.container}
       onClick={toggle}
+      data-theme={theme}
       style={
         theme === "dark"
           ? { backgroundColor: "#f6eee3" }
@@ -21,8 +22,8 @@ const ThemeToggle = () => {
         className={styles.ball}
         style={
           theme === "dark"
-            ? { left: 1, background: "#0f172a" }
-            : { right: 1, background: "#f6eee3" }
+            ? { left: -1, background: "#0f172a" }
+            : { right: -1, background: "#f6eee3" }
         }
       ></div>
       <Image src="/sun.png" alt="" height={14} width={14} />
