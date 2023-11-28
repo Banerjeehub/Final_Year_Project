@@ -13,7 +13,7 @@ const Navbar = () => {
         <Image src="/instagram.png" alt="linkedin" width={24} height={24} />
         <Image src="/youtube.png" alt="github" width={24} height={24} />
       </div>
-      <div className={styles.logo}>BlogifyHub</div>
+      <div className={styles.logo}>ThoughtCanvas</div>
       <div className={styles.links}>
         <ThemeToggle />
         <Link href="/" className={styles.link}>

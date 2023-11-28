@@ -1,4 +1,13 @@
-.container
-{
-    flex:2;
+.container {
+  flex: 2;
+  margin-top: 60px;
+}
+
+.subTitle {
+  color: gray;
+  font-size: 16px;
+  font-weight: 400;
+}
+.title {
+  font-size: 28px;
 }
