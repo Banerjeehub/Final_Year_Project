@@ -11,7 +11,9 @@
   gap: 10px;
   flex: 1;
 }
-
+.gitImage {
+  border-radius: 50%;
+}
 .logo {
   flex: 1;
   text-align: center;

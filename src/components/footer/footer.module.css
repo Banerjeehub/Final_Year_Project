@@ -8,7 +8,9 @@
   padding: 20px 0;
   color: var(--softTextColor);
 }
-
+.gitImage {
+  border-radius: 50%;
+}
 .logo {
   display: flex;
   gap: 10px;

@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Ephesis&display=swap");
+
+.container {
+  margin-top: 50px;
+}
+
+.title {
+  color: var(--softTextColor);
+  margin-bottom: 30px;
+}
+
+.write {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.input {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-family: "Ephesis", cursive;
+  font-size: 32px;
+  text-align: center;
+}
+
+.button {
+  padding: 16px 20px;
+  background-color: crimson;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.comments {
+  margin-top: 50px;
+}
+
+.comment {
+  margin-bottom: 50px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--softTextColor);
+}
+
+.userName {
+  font-weight: 500;
+}
+
+.date {
+  font-size: 14px;
+}
+
+.description {
+  font-size: 18px;
+  font-weight: 300;
+}
