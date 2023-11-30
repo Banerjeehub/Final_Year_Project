@@ -12,7 +12,7 @@ const AuthLinks = () => {
     function handleResize() {
       setWindowWidth(window.innerWidth);
       if (window.innerWidth >= 640) {
-        setOpen(false); 
+        setOpen(false);
       }
     }
 
@@ -22,7 +22,7 @@ const AuthLinks = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  const status = "notAuthenticated";
+  const status = "Authenticated";
   return (
     <>
       {status === "notAuthenticated" ? (
