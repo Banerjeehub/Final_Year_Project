@@ -1,31 +1,17 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import styles from "./authlinks.module.css";
 import Link from "next/link";
+import styles from "./authLinks.module.css";
+import { useState } from "react";
+import { signOut, useSession } from "next-auth/react";
 
 const AuthLinks = () => {
   const [open, setOpen] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(
-    typeof window !== "undefined" ? window.innerWidth : 0
-  );
-  useEffect(() => {
-    function handleResize() {
-      setWindowWidth(window.innerWidth);
-      if (window.innerWidth >= 640) {
-        setOpen(false);
-      }
-    }
 
-    window.addEventListener("resize", handleResize);
+  const { status } = useSession();
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-  const status = "Authenticated";
   return (
     <>
-      {status === "notAuthenticated" ? (
+      {status === "unauthenticated" ? (
         <Link href="/login" className={styles.link}>
           Login
         </Link>
@@ -34,25 +20,22 @@ const AuthLinks = () => {
           <Link href="/write" className={styles.link}>
             Write
           </Link>
-          <span className={styles.link}>Logout</span>
+          <span className={styles.link} onClick={signOut}>
+            Logout
+          </span>
         </>
       )}
-      <div
-        className={styles.burger}
-        onClick={() => {
-          setOpen(!open);
-        }}
-      >
+      <div className={styles.burger} onClick={() => setOpen(!open)}>
         <div className={styles.line}></div>
         <div className={styles.line}></div>
         <div className={styles.line}></div>
       </div>
-      {open && windowWidth < 640 && (
+      {open && (
         <div className={styles.responsiveMenu}>
           <Link href="/">Homepage</Link>
           <Link href="/">About</Link>
           <Link href="/">Contact</Link>
-          {status === "notAuthenticated" ? (
+          {status === "notauthenticated" ? (
             <Link href="/login">Login</Link>
           ) : (
             <>
