@@ -28,6 +28,7 @@
   width: 100%;
   gap: 50px;
   font-size: 36px;
+  z-index: 100;
 }
 
 @media screen and (max-width: 640px) {

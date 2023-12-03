@@ -6,7 +6,7 @@
 }
 
 .wrapper {
-  background-color: var(--softBg);
+  background-color: var(--bg);
   padding: 150px 200px;
   display: flex;
   flex-direction: column;
