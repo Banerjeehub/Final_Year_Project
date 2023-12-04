@@ -17,7 +17,7 @@ const LoginPage = () => {
     return <Loading />;
   }
   if (status == "authenticated") {
-    toast.success("Login Successfully!");
+    toast.success("Logged in successfully.");
     Router.push("/");
   }
   return (

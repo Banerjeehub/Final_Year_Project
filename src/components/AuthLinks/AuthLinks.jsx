@@ -4,10 +4,11 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "./authLinks.module.css";
 import { signOut, useSession } from "next-auth/react";
+import toast from "react-hot-toast";
 
 const AuthLinks = () => {
   const [open, setOpen] = useState(false);
-  const { status } = useSession();
+  const { data: session } = useSession();
 
   const handleLinkClick = () => {
     setOpen(false); // Close the menu when a link is clicked
@@ -31,21 +32,26 @@ const AuthLinks = () => {
     };
   }, []);
 
+  const handleLogout = async () => {
+    await signOut({ redirect: false });
+    toast.success("Logged out successfully"); // Display toast upon successful logout
+  };
+
   return (
     <>
-      {status === "unauthenticated" ? (
-        <Link href="/login" className={styles.link}>
-          Login
-        </Link>
-      ) : (
+      {session ? (
         <>
           <Link href="/write" className={styles.link}>
             Write
           </Link>
-          <span className={styles.link} onClick={signOut}>
+          <span className={styles.link} onClick={handleLogout}>
             Logout
           </span>
         </>
+      ) : (
+        <Link href="/login" className={styles.link}>
+          Login
+        </Link>
       )}
       <div className={styles.burger} onClick={() => setOpen(!open)}>
         <div className={styles.line}></div>
@@ -63,17 +69,14 @@ const AuthLinks = () => {
           <Link href="/" onClick={handleLinkClick}>
             Contact
           </Link>
-          {status === "unauthenticated" ? (
+          {session ? (
+            <Link href="/write" onClick={handleLinkClick}>
+              Write
+            </Link>
+          ) : (
             <Link href="/login" onClick={handleLinkClick}>
               Login
             </Link>
-          ) : (
-            <>
-              <Link href="/write" onClick={handleLinkClick}>
-                Write
-              </Link>
-              <span style={{cursor:"pointer"}} onClick={() => signOut()}>Logout</span>
-            </>
           )}
         </div>
       )}
