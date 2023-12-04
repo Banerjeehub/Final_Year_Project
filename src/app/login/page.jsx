@@ -1,10 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./loginpage.module.css";
 import { signIn, useSession } from "next-auth/react";
 import Loading from "../../components/LoadingPage/Loading";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
+
+import "react-toastify/dist/ReactToastify.css";
 
 const LoginPage = () => {
   const { data, status } = useSession();
@@ -14,6 +17,7 @@ const LoginPage = () => {
     return <Loading />;
   }
   if (status == "authenticated") {
+    toast.success("Login Successfully!");
     Router.push("/");
   }
   return (
@@ -27,8 +31,22 @@ const LoginPage = () => {
         >
           Sign in with Google
         </div>
-        <div className={styles.socialButton}>Sign in with Github</div>
-        <div className={styles.socialButton}>Sign in with Facebook</div>
+        <div
+          className={styles.socialButton}
+          onClick={() => {
+            signIn("github");
+          }}
+        >
+          Sign in with Github
+        </div>
+        <div
+          className={styles.socialButton}
+          onClick={() => {
+            signIn("facebook");
+          }}
+        >
+          Sign in with Facebook
+        </div>
       </div>
     </div>
   );
