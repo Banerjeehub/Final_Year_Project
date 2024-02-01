@@ -11,3 +11,7 @@
   background-color: crimson;
   cursor: pointer;
 }
+.button:disabled {
+  background-color: rgba(220, 20, 60, 0.715);
+  cursor: not-allowed;
+}

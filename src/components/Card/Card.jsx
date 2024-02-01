@@ -2,26 +2,29 @@ import React from "react";
 import styles from "./card.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { format } from "date-fns";
 
-const Card = () => {
+const Card = ({ key, item }) => {
+  // Format the createdAt date string
+  const formattedDate = format(
+    new Date(item.createdAt),
+    "MMMM dd, yyyy hh:mm a"
+  );
+
   return (
-    <div className={styles.container}>
+    <div className={styles.container} key={key}>
       <div className={styles.imageContainer}>
-        <Image src="/rjs.jpg" alt="" fill className={styles.img} />
+        <Image src={item.img} alt="" fill className={styles.img} />
       </div>
       <div className={styles.textContainer}>
         <div className={styles.details}>
-          <span className={styles.date}>September 20, 2023 - </span>
-          <span className={styles.category}>CODING</span>
+          <span className={styles.date}>{formattedDate} - </span>
+          <span className={styles.category}>{item.catSlug}</span>
         </div>
         <Link href="/">
-          <h1>Understanding React Hooks and Its Implementation</h1>
+          <h1>{item.title}</h1>
         </Link>
-        <p className={styles.description}>
-          React hooks have revolutionized the way developers build components.
-          Learn how to effectively use hooks in your React applications and
-          their practical implementation in various scenarios.
-        </p>
+        <p className={styles.description}>{item.desc}</p>
         <Link href="/" className={styles.link}>
           Read More
         </Link>

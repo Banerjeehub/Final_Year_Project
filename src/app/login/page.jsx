@@ -20,6 +20,8 @@ const LoginPage = () => {
     toast.success("Logged in successfully.");
     Router.push("/");
   }
+
+  console.log(data);
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
