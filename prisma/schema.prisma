@@ -77,7 +77,7 @@ model Post {
   cat       Category  @relation(fields: [catSlug], references: [slug])
   userEmail String
   user      User      @relation(fields: [userEmail], references: [email])
-  //comments  Comment[]
+  comments  Comment[]
 }
 
 model Comment {
@@ -87,5 +87,5 @@ model Comment {
   userEmail String
   user      User     @relation(fields: [userEmail], references: [email])
   postSlug  String
-  //post      Post     @relation(fields: [postSlug], references: [slug])
+  post      Post     @relation(fields: [postSlug], references: [slug])
 }
