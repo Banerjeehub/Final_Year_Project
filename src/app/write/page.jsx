@@ -19,7 +19,7 @@ import toast from "react-hot-toast";
 const WritePage = () => {
   const { status } = useSession();
   const router = useRouter();
-  
+
   const [open, setOpen] = useState(false);
   const [file, setFile] = useState(null);
   const [media, setMedia] = useState("");
@@ -82,7 +82,7 @@ const WritePage = () => {
         desc: value,
         img: media,
         slug: slugify(title),
-        catSlug: catSlug || "style",
+        catSlug: catSlug || "news",
       }),
     });
 
@@ -105,7 +105,7 @@ const WritePage = () => {
         className={styles.select}
         onChange={(e) => setCatSlug(e.target.value)}
       >
-        <option value="style">style</option>
+        <option value="news">news</option>
         <option value="fashion">fashion</option>
         <option value="food">food</option>
         <option value="culture">culture</option>

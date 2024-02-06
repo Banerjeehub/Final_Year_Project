@@ -17,7 +17,6 @@ const getData = async () => {
 
 const CategoryList = async () => {
   const data = await getData();
-  //console.log(data);
 
   return (
     <div className={styles.container}>
