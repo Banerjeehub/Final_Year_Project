@@ -1,5 +1,5 @@
 import Menu from "@/components/menu/Menu";
-import styles from "./singlepage.module.css";
+import Styles from "./singlepage.module.css";
 import Image from "next/image";
 import Comments from "@/components/comments/Comments";
 import moment from "moment";
@@ -23,35 +23,35 @@ const SinglePage = async ({ params }) => {
   console.log(data);
   const formattedDate = moment(data.createdAt).format("Do MMMM, YYYY");
   return (
-    <div className={styles.container}>
-      <div className={styles.infoContainer}>
-        <div className={styles.textContainer}>
-          <h1 className={styles.title}>{data.title}</h1>
-          <div className={styles.user}>
-            <div className={styles.userImageContainer}>
+    <div className={Styles.container}>
+      <div className={Styles.infoContainer}>
+        <div className={Styles.textContainer}>
+          <h1 className={Styles.title}>{data.title}</h1>
+          <div className={Styles.user}>
+            <div className={Styles.userImageContainer}>
               <Image
                 src={data?.user?.image}
                 alt=""
                 fill
-                className={styles.avatar}
+                className={Styles.avatar}
               />
             </div>
-            <div className={styles.userTextContainer}>
-              <span className={styles.userName}>{data.user.name}</span>
-              <span className={styles.date}>{formattedDate}</span>
+            <div className={Styles.userTextContainer}>
+              <span className={Styles.userName}>{data.user.name}</span>
+              <span className={Styles.date}>{formattedDate}</span>
             </div>
           </div>
         </div>
         {data?.img && (
-          <div className={styles.imageContainer}>
-            <Image src={data?.img} alt="" fill className={styles.image} />
+          <div className={Styles.imageContainer}>
+            <Image src={data?.img} alt="" fill className={Styles.image} />
           </div>
         )}
       </div>
-      <div className={styles.content}>
-        <div className={styles.post}>
+      <div className={Styles.content}>
+        <div className={Styles.post}>
           <div
-            className={styles.description}
+            className={Styles.description}
             dangerouslySetInnerHTML={{ __html: data?.desc }}
           />
           <div className="comment">

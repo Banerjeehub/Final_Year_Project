@@ -1,4 +1,4 @@
-import styles from "./menu.module.css";
+import Styles from "./menu.module.css";
 import MenuPost from "../MenuPost/MenuPost";
 import Link from "next/link";
 import MenuCategory from "../MenuCategory/MenuCategory";
@@ -6,17 +6,17 @@ import MenuCategory from "../MenuCategory/MenuCategory";
 const Menu = () => {
   return (
     // Trending posts
-    <div className={styles.container}>
-      <h2 className={styles.subTitle}>{"What's Trending"}</h2>
-      <h1 className={styles.title}>Most Popular</h1>
+    <div className={Styles.container}>
+      <h2 className={Styles.subTitle}>{"What's Trending"}</h2>
+      <h1 className={Styles.title}>Most Popular</h1>
       <MenuPost withImage={false} />
-      <h2 className={styles.subTitle}>{"Discover By Topics"}</h2>
-      <h1 className={styles.title}>Categories</h1>
+      <h2 className={Styles.subTitle}>{"Discover By Topics"}</h2>
+      <h1 className={Styles.title}>Categories</h1>
 
       <MenuCategory />
       {/* Editor posts */}
-      <h2 className={styles.subTitle}>{"Chosen By The Editor"}</h2>
-      <h1 className={styles.title}>Editor's Pick</h1>
+      <h2 className={Styles.subTitle}>{"Chosen By The Editor"}</h2>
+      <h1 className={Styles.title}>Editor's Pick</h1>
       <MenuPost withImage={true} />
     </div>
   );

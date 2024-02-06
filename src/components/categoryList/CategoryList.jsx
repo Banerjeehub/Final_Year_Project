@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./categoryList.module.css";
+import Styles from "./categoryList.module.css";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -19,13 +19,13 @@ const CategoryList = async () => {
   const data = await getData();
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Popular Categories</h1>
-      <div className={styles.categories}>
+    <div className={Styles.container}>
+      <h1 className={Styles.title}>Popular Categories</h1>
+      <div className={Styles.categories}>
         {data?.map((item) => (
           <Link
             href={`/blog?cat=${item.title}`}
-            className={`${styles.category} ${styles[item.title]}`}
+            className={`${Styles.category} ${Styles[item.title]}`}
             key={item._id}
           >
             {item.img && (
@@ -34,7 +34,7 @@ const CategoryList = async () => {
                 alt=""
                 width={32}
                 height={32}
-                className={styles.image}
+                className={Styles.image}
               />
             )}
             {item.title}

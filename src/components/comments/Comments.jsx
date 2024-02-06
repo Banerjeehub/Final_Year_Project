@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import styles from "./comments.module.css";
+import Styles from "./comments.module.css";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
 import useSWR from "swr";
@@ -40,43 +40,43 @@ const Comments = ({ postSlug }) => {
   };
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Comments</h1>
+    <div className={Styles.container}>
+      <h1 className={Styles.title}>Comments</h1>
       {status === "authenticated" ? (
-        <div className={styles.write}>
+        <div className={Styles.write}>
           <textarea
             placeholder="Write your thoughts ..."
-            className={styles.input}
+            className={Styles.input}
             onChange={(e) => setDesc(e.target.value)}
           />
-          <button className={styles.button} onClick={handleSubmit}>
+          <button className={Styles.button} onClick={handleSubmit}>
             Send
           </button>
         </div>
       ) : (
         <Link href="/login"> Login to Write </Link>
       )}
-      <div className={styles.comments}>
+      <div className={Styles.comments}>
         {isLoading
           ? "Loading"
           : data?.map((item) => (
-              <div className={styles.comment} key={item.id}>
-                <div className={styles.user}>
+              <div className={Styles.comment} key={item.id}>
+                <div className={Styles.user}>
                   {item?.user.image && (
                     <Image
                       src={item.user.image}
                       alt=""
                       width={50}
                       height={50}
-                      className={styles.avatar}
+                      className={Styles.avatar}
                     />
                   )}
-                  <div className={styles.userInfo}>
-                    <span className={styles.userName}>{item.user.name}</span>
-                    <span className={styles.date}>{handleDate(item)}</span>
+                  <div className={Styles.userInfo}>
+                    <span className={Styles.userName}>{item.user.name}</span>
+                    <span className={Styles.date}>{handleDate(item)}</span>
                   </div>
                 </div>
-                <p className={styles.description}>{item.desc}</p>
+                <p className={Styles.description}>{item.desc}</p>
               </div>
             ))}
       </div>

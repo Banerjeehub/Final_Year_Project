@@ -1,5 +1,5 @@
 import CardList from "@/components/cardList/CardList";
-import styles from "./blogPage.module.css";
+import Styles from "./blogPage.module.css";
 import Menu from "@/components/Menu/Menu";
 let arr = [];
 
@@ -8,9 +8,9 @@ const BlogPage = ({ searchParams }) => {
   const { cat } = searchParams;
   if (cat != "") arr.push(cat);
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>{arr[arr.length - 1]} Blog</h1>
-      <div className={styles.content}>
+    <div className={Styles.container}>
+      <h1 className={Styles.title}>{arr[arr.length - 1]} Blog</h1>
+      <div className={Styles.content}>
         <CardList page={page} cat={cat} />
         <Menu />
       </div>

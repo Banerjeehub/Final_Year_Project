@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
-import styles from "./loginpage.module.css";
+import Styles from "./loginpage.module.css";
 import { signIn, useSession } from "next-auth/react";
 import Loading from "../../components/LoadingPage/Loading";
 import { useRouter } from "next/navigation";
@@ -23,10 +23,10 @@ const LoginPage = () => {
 
   console.log(data);
   return (
-    <div className={styles.container}>
-      <div className={styles.wrapper}>
+    <div className={Styles.container}>
+      <div className={Styles.wrapper}>
         <div
-          className={styles.socialButton}
+          className={Styles.socialButton}
           onClick={() => {
             signIn("google");
           }}
@@ -34,7 +34,7 @@ const LoginPage = () => {
           Sign in with Google
         </div>
         <div
-          className={styles.socialButton}
+          className={Styles.socialButton}
           onClick={() => {
             signIn("github");
           }}

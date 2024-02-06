@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import styles from "./authLinks.module.css";
+import Styles from "./authLinks.module.css";
 import { signOut, useSession } from "next-auth/react";
 import toast from "react-hot-toast";
 
@@ -41,25 +41,25 @@ const AuthLinks = () => {
     <>
       {session ? (
         <>
-          <Link href="/write" className={styles.link}>
+          <Link href="/write" className={Styles.link}>
             Write
           </Link>
-          <span className={styles.link} onClick={handleLogout}>
+          <span className={Styles.link} onClick={handleLogout}>
             Logout
           </span>
         </>
       ) : (
-        <Link href="/login" className={styles.link}>
+        <Link href="/login" className={Styles.link}>
           Login
         </Link>
       )}
-      <div className={styles.burger} onClick={() => setOpen(!open)}>
-        <div className={styles.line}></div>
-        <div className={styles.line}></div>
-        <div className={styles.line}></div>
+      <div className={Styles.burger} onClick={() => setOpen(!open)}>
+        <div className={Styles.line}></div>
+        <div className={Styles.line}></div>
+        <div className={Styles.line}></div>
       </div>
       {open && (
-        <div className={styles.responsiveMenu}>
+        <div className={Styles.responsiveMenu}>
           <Link href="/" onClick={handleLinkClick}>
             Homepage
           </Link>

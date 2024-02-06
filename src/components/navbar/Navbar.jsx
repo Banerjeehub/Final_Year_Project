@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./navbar.module.css";
+import Styles from "./navbar.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
@@ -7,28 +7,28 @@ import AuthLinks from "../AuthLinks/AuthLinks";
 
 const Navbar = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.social}>
+    <div className={Styles.container}>
+      <div className={Styles.social}>
         <Image src="/facebook.png" alt="facebook" width={24} height={24} />
         <Image
           src="/github.png"
           alt="github"
           width={24}
           height={24}
-          className={styles.gitImage}
+          className={Styles.gitImage}
         />
         <Image src="/linkedin.svg" alt="linkedin" width={24} height={24} />
       </div>
-      <div className={styles.logo}>ThoughtCanvas</div>
-      <div className={styles.links}>
+      <div className={Styles.logo}>ThoughtCanvas</div>
+      <div className={Styles.links}>
         <ThemeToggle />
-        <Link href="/" className={styles.link}>
+        <Link href="/" className={Styles.link}>
           Homepage
         </Link>
-        <Link href="/" className={styles.link}>
+        <Link href="/" className={Styles.link}>
           Contact
         </Link>
-        <Link href="/" className={styles.link}>
+        <Link href="/" className={Styles.link}>
           About
         </Link>
         <AuthLinks />

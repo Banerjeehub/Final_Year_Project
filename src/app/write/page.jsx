@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import styles from "./writePage.module.css";
+import Styles from "./writePage.module.css";
 import { useEffect, useState } from "react";
 import "react-quill/dist/quill.bubble.css";
 import { useRouter } from "next/navigation";
@@ -58,7 +58,7 @@ const WritePage = () => {
   }, [file]);
 
   if (status === "loading") {
-    return <div className={styles.loading}>Loading...</div>;
+    return <div className={Styles.loading}>Loading...</div>;
   }
 
   if (status === "unauthenticated") {
@@ -96,15 +96,15 @@ const WritePage = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={Styles.container}>
       <input
         type="text"
         placeholder="Title"
-        className={styles.input}
+        className={Styles.input}
         onChange={(e) => setTitle(e.target.value)}
       />
       <select
-        className={styles.select}
+        className={Styles.select}
         onChange={(e) => setCatSlug(e.target.value)}
       >
         <option value="news">news</option>
@@ -114,40 +114,40 @@ const WritePage = () => {
         <option value="travel">travel</option>
         <option value="coding">coding</option>
       </select>
-      <div className={styles.editor}>
-        <button className={styles.button} onClick={() => setOpen(!open)}>
+      <div className={Styles.editor}>
+        <button className={Styles.button} onClick={() => setOpen(!open)}>
           <Image src="/plus.png" alt="" width={16} height={16} />
         </button>
         {open && (
-          <div className={styles.add}>
+          <div className={Styles.add}>
             <input
               type="file"
               id="image"
               onChange={(e) => setFile(e.target.files[0])}
               style={{ display: "none" }}
             />
-            <button className={styles.addButton}>
+            <button className={Styles.addButton}>
               <label htmlFor="image">
                 <Image src="/imgU.png" alt="" width={16} height={16} />
               </label>
             </button>
-            <button className={styles.addButton}>
+            <button className={Styles.addButton}>
               <Image src="/external.png" alt="" width={16} height={16} />
             </button>
-            <button className={styles.addButton}>
+            <button className={Styles.addButton}>
               <Image src="/video.png" alt="" width={16} height={16} />
             </button>
           </div>
         )}
         <ReactQuill
-          className={styles.textArea}
+          className={Styles.textArea}
           theme="bubble"
           value={value}
           onChange={setValue}
           placeholder="Tell your story..."
         />
       </div>
-      <button className={styles.publish} onClick={handleSubmit}>
+      <button className={Styles.publish} onClick={handleSubmit}>
         Publish
       </button>
     </div>

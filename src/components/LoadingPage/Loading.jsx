@@ -1,9 +1,9 @@
-import styles from "./loading.module.css";
+import Styles from "./loading.module.css";
 import LoadingScreen from "react-loading-screen";
 
 export default function App() {
   return (
-    <div className={styles.container}>
+    <div className={Styles.container}>
       <LoadingScreen
         loading={true}
         bgColor="#091B18"
