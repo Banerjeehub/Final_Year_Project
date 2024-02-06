@@ -78,6 +78,7 @@ model Post {
   userEmail String
   user      User      @relation(fields: [userEmail], references: [email])
   comments  Comment[]
+   @@index([userEmail], name: "idx_userEmail")
 }
 
 model Comment {
@@ -88,4 +89,5 @@ model Comment {
   user      User     @relation(fields: [userEmail], references: [email])
   postSlug  String
   post      Post     @relation(fields: [postSlug], references: [slug])
+   @@index([userEmail], name: "idx_userEmail")
 }

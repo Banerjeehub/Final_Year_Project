@@ -1,4 +1,4 @@
-.container {
+/* .container {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -40,7 +40,7 @@
   gap: 20px;
   background-color: transparent;
   position: absolute;
-  /* z-index: 76; */
+  
   width: 100%;
   left: 50px;
   top: -30px;
@@ -49,7 +49,7 @@
 .input {
   padding: 50px;
   font-size: 64px;
-  border: none;
+
   outline: none;
   background-color: transparent;
   color: var(--textColor);
@@ -60,7 +60,11 @@
 }
 
 .textArea {
-  width: 100%;
+  position: absolute;
+  top: 7%;
+  left: 4%;
+  height: 60vh;
+  width: 70%;
 }
 
 .publish {
@@ -77,9 +81,98 @@
 }
 
 .publish:hover {
-  background-color: #137c13; /* Change color on hover */
+  background-color: #137c13; 
 }
 
 .publish:active {
-  background-color: #0e590e; /* Change color when clicked */
+  background-color: #0e590e; 
+} */
+
+.container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.select{
+  margin-bottom: 50px;
+  padding: 10px 20px;
+  margin-left: 50px;
+  width: max-content;
+}
+
+.editor {
+  display: flex;
+  gap: 20px;
+  height: 700px;
+  position: relative;
+}
+
+.button,
+.addButton {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid var(--textColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.addButton {
+  border-color: #1a8917;
+}
+
+.add {
+  display: flex;
+  gap: 20px;
+  background-color: transparent;
+  position: absolute;
+  
+  width: 100%;
+  left: 50px;
+  top: -30px;
+}
+
+.input{
+  padding: 50px;
+  font-size: 64px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: var(--textColor);
+}
+
+.input::placeholder{
+  color: #b3b3b1;
+}
+
+.textArea {
+  position: absolute;
+  top: 7%;
+  left: 4%;
+  height: 60vh;
+  width: 70%;
+}
+
+.publish {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #1a8917;
+  color: white;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+.publish:hover {
+  background-color: #137c13; 
+}
+
+.publish:active {
+  background-color: #0e590e; 
 }

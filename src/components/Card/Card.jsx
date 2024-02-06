@@ -2,8 +2,8 @@ import Image from "next/image";
 import styles from "./card.module.css";
 import Link from "next/link";
 
-const Card = ({ key, item }) => {
-  console.log(item);
+const Card = ({ item, key }) => {
+  //console.log(item._id, item);
   return (
     <div className={styles.container} key={key}>
       {item.img && (
@@ -18,14 +18,14 @@ const Card = ({ key, item }) => {
           </span>
           <span className={styles.category}>{item.catSlug}</span>
         </div>
-        <Link href={`/posts/${item.catSlug}`}>
+        <Link href={`/post/${item.slug}`}>
           <h1>{item.title}</h1>
         </Link>
         <div
           className={styles.desc}
           dangerouslySetInnerHTML={{ __html: item?.desc.substring(0, 60) }}
         />
-        <Link href={`/posts/${item.catSlug}`} className={styles.link}>
+        <Link href={`/post/${item.slug}`} className={styles.link}>
           Read More
         </Link>
       </div>

@@ -41,14 +41,6 @@ const LoginPage = () => {
         >
           Sign in with Github
         </div>
-        <div
-          className={styles.socialButton}
-          onClick={() => {
-            signIn("facebook");
-          }}
-        >
-          Sign in with Facebook
-        </div>
       </div>
     </div>
   );

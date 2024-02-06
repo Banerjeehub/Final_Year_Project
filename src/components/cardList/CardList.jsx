@@ -1,7 +1,8 @@
 import React from "react";
-import styles from "./cardlist.module.css";
+import styles from "./cardList.module.css";
 import Pagination from "../pagination/Pagination";
-import Card from "../Card/Card";
+import Image from "next/image";
+import Card from "../card/Card";
 
 const getData = async (page, cat) => {
   const res = await fetch(
@@ -12,26 +13,32 @@ const getData = async (page, cat) => {
   );
 
   if (!res.ok) {
-    throw new Error("failed");
+    throw new Error("Failed");
   }
+
   return res.json();
 };
-const POST_PER_PAGE = 3;
+
 const CardList = async ({ page, cat }) => {
   const { post, count } = await getData(page, cat);
-  // console.log(post, count);
+
+  const POST_PER_PAGE = 2;
+
+  const hasPrev = POST_PER_PAGE * (page - 1) > 0;
   const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE < count;
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Recent Posts</h1>
-      <div className={styles.post}>
-        {post?.map((item) => (
-          <Card key={item.id} item={item} />
-        ))}
+      <div className={styles.posts}>
+      {post?.map((item) => {
+  console.log("Item ID:", item.id);
+  return <Card item={item} key={item.id} />;
+})}
       </div>
-      <Pagination page={page} hasNext={hasNext} />
+      <Pagination page={page} hasPrev={hasPrev} hasNext={hasNext} />
     </div>
   );
-};
+      };
 
 export default CardList;
