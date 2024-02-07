@@ -1,14 +1,14 @@
 "use client";
 
 import React, { useContext } from "react";
-import styles from "./themetoggle.module.css";
+import Styles from "./themetoggle.module.css";
 import Image from "next/image";
 import { ThemeContext } from "@/context/ThemeContext";
 const ThemeToggle = () => {
   const { theme, toggle } = useContext(ThemeContext);
   return (
     <div
-      className={styles.container}
+      className={Styles.container}
       onClick={toggle}
       data-theme={theme}
       style={
@@ -19,7 +19,7 @@ const ThemeToggle = () => {
     >
       <Image src="/moon.png" alt="" height={14} width={14} />
       <div
-        className={styles.ball}
+        className={Styles.ball}
         style={
           theme === "dark"
             ? { left: -1, background: "#0f172a" }

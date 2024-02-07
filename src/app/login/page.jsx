@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useEffect } from "react";
-import Styles from "./loginpage.module.css";
+import Styles from "./page.module.css";
 import { signIn, useSession } from "next-auth/react";
-import Loading from "../../components/LoadingPage/Loading";
+import Loading from "../../components/loadingPage/Loadingpage";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 

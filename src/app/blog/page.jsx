@@ -1,6 +1,6 @@
 import CardList from "@/components/cardList/CardList";
-import Styles from "./blogPage.module.css";
-import Menu from "@/components/Menu/Menu";
+import Styles from "./page.module.css";
+import Menu from "@/components/menu/Menu";
 let arr = [];
 
 const BlogPage = ({ searchParams }) => {

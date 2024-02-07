@@ -1,5 +1,5 @@
 import Menu from "@/components/menu/Menu";
-import Styles from "./singlepage.module.css";
+import Styles from "./page.module.css";
 import Image from "next/image";
 import Comments from "@/components/comments/Comments";
 import moment from "moment";

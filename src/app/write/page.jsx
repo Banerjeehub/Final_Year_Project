@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Styles from "./writepage.module.css";
+import Styles from "./page.module.css";
 import { useEffect, useState } from "react";
 import "react-quill/dist/quill.bubble.css";
 import { useRouter } from "next/navigation";
